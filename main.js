@@ -4,7 +4,7 @@ const fetch = require("node-fetch");
 const ytdl = require('ytdl-core');
 
 
-const token = process.env.token;
+
 
 const PREFIX = '!';
 
@@ -108,5 +108,5 @@ bot.on('message', message=>{
 })
 
 
-bot.login(token);
+bot.login(process.env.token);
 
