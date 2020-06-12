@@ -104,6 +104,23 @@ bot.on('message', message=>{
             })
 
         break;
+
+        case 'saat':
+
+            var today = new Date();
+            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+
+            message.channel.send(time);
+
+            if(!message.guild.voiceConnection) 
+                channel.join()
+                .then(function(connection) {
+                const dispatcher = connection.play(ytdl('https://www.youtube.com/watch?v=Etm17x5czPY', {filter: "audioonly"}))
+                dispatcher.on("finish", function(){
+                    connection.disconnect();
+                });
+                
+            })
     }
 })
 
