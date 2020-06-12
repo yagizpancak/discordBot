@@ -58,14 +58,14 @@ bot.on('ready', () => {
 bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX.length).split(" ");
-    const channel = message.member.voice.channel;
+    
 
     switch(args[0]){
         case 'dolar':
             convertCurrency(1, 'USD', 'TRY', function(err, amount) {
                 message.channel.send('1 USD = '+amount+' Türk Lirası');
             });
-
+            var channel = message.member.voice.channel;
             if (!channel){
                 return;
             }
@@ -88,6 +88,7 @@ bot.on('message', message=>{
                 message.channel.send('1 EUR = '+amount+' Türk Lirası');
             });
 
+            var channel = message.member.voice.channel;
             if (!channel){
                 return;
             }
@@ -112,6 +113,7 @@ bot.on('message', message=>{
 
             message.channel.send(time);
 
+            var channel = message.member.voice.channel;
             if(!message.guild.voiceConnection) 
                 channel.join()
                 .then(function(connection) {
