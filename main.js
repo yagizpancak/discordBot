@@ -109,7 +109,8 @@ bot.on('message', message=>{
         case 'saat':
 
             var today = new Date();
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var hour = toString(parseInt(today.getHours())+3);
+            var time = (hour) + ":" + today.getMinutes() + ":" + today.getSeconds();
 
             message.channel.send(time);
 
