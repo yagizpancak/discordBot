@@ -110,7 +110,7 @@ bot.on('message', message=>{
 
             var today = new Date();
             var hour = parseInt(today.getHours())+3;
-            var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            var time = hour + ":" + today.getMinutes() + ":" + today.getSeconds();
 
             message.channel.send(time);
 
