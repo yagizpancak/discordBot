@@ -139,7 +139,7 @@ bot.on('message', message=>{
             break;
 
         case 'sovyet':
-            message.channel.send( emoji('721352612271620116'));
+            //message.channel.send( emoji('721352612271620116'));
             
             var channel = message.member.voice.channel;
             if(!message.guild.voiceConnection) 
