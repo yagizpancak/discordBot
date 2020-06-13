@@ -131,12 +131,28 @@ bot.on('message', message=>{
         case "komut":
             const embed = new Discord.MessageEmbed()
             .setTitle('Komutlar')
-            .setDescription('!dolar \n!euro \n!saat')
+            .setDescription('!dolar \n!euro \n!saat \n!sovyet')
             
             .setColor(0x33CFFB)
             message.channel.send(embed);
 
             break;
+
+        case 'sovyet':
+            message.channel.send(':flag_su:');
+            
+            var channel = message.member.voice.channel;
+            if(!message.guild.voiceConnection) 
+                channel.join()
+                .then(function(connection) {
+                const dispatcher = connection.play(ytdl('https://youtu.be/eymPAdrGCtE', {filter: "audioonly"}))
+                dispatcher.on("finish", function(){
+                    connection.disconnect();
+                });
+                
+            })
+            break;
+
     }
 })
 
