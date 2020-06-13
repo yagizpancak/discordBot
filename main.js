@@ -126,6 +126,15 @@ bot.on('message', message=>{
                 });
                 
             })
+            break;
+        
+        case "komut":
+            const embed = new Discord.MessageEmbed()
+            .setTitle('Komutlar')
+            .setDescription('!dolar \n!euro \n!saat')
+            
+            .setColor(0x33CFFB)
+            message.channel.send(embed);
     }
 })
 
