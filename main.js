@@ -74,7 +74,7 @@ bot.on('message', message=>{
             if(!message.guild.voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play(ytdl('https://youtu.be/90X3hdTfa28', {filter: "audioonly"}))
+                const dispatcher = connection.play(ytdl('https://youtu.be/EpoHRAJX6fY', {filter: "audioonly"}))
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
