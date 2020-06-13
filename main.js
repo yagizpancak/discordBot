@@ -135,6 +135,8 @@ bot.on('message', message=>{
             
             .setColor(0x33CFFB)
             message.channel.send(embed);
+
+            break;
     }
 })
 
