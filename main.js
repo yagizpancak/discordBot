@@ -4,8 +4,6 @@ const fetch = require("node-fetch");
 const ytdl = require('ytdl-core');
 
 
-
-
 const PREFIX = '!';
 
 var https = require('https');
@@ -51,6 +49,24 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
                   });
 }
 
+function playSound(channel, voiceConnection, link) {
+    
+            if (!channel){
+                return;
+            }
+
+
+            if(!voiceConnection) 
+                channel.join()
+                .then(function(connection) {
+                const dispatcher = connection.play(ytdl(link, {filter: "audioonly"}))
+                dispatcher.on("finish", function(){
+                    connection.disconnect();
+                });
+                
+            })
+}
+
 bot.on('ready', () => {
     console.log('This bot is online!')
 })
@@ -65,21 +81,8 @@ bot.on('message', message=>{
             convertCurrency(1, 'USD', 'TRY', function(err, amount) {
                 message.channel.send('1 USD = '+amount+' Türk Lirası');
             });
-            var channel = message.member.voice.channel;
-            if (!channel){
-                return;
-            }
-
-
-            if(!message.guild.voiceConnection) 
-                channel.join()
-                .then(function(connection) {
-                const dispatcher = connection.play(ytdl('https://youtu.be/EpoHRAJX6fY', {filter: "audioonly"}))
-                dispatcher.on("finish", function(){
-                    connection.disconnect();
-                });
-                
-            })
+            
+            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/EpoHRAJX6fY');
 
             break;
         
@@ -88,23 +91,9 @@ bot.on('message', message=>{
                 message.channel.send('1 EUR = '+amount+' Türk Lirası');
             });
 
-            var channel = message.member.voice.channel;
-            if (!channel){
-                return;
-            }
-
-
-            if(!message.guild.voiceConnection) 
-                channel.join()
-                .then(function(connection) {
-                const dispatcher = connection.play(ytdl('https://youtu.be/90X3hdTfa28', {filter: "audioonly"}))
-                dispatcher.on("finish", function(){
-                    connection.disconnect();
-                })
-                
-            })
-
-        break;
+            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/90X3hdTfa28');
+            
+            break;
 
         case 'saat':
 
@@ -115,17 +104,9 @@ bot.on('message', message=>{
             var time = hour + ":" + today.getMinutes() + ":" + today.getSeconds();
 
             message.channel.send(time);
-
-            var channel = message.member.voice.channel;
-            if(!message.guild.voiceConnection) 
-                channel.join()
-                .then(function(connection) {
-                const dispatcher = connection.play(ytdl('https://www.youtube.com/watch?v=Etm17x5czPY', {filter: "audioonly"}))
-                dispatcher.on("finish", function(){
-                    connection.disconnect();
-                });
-                
-            })
+            
+            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://www.youtube.com/watch?v=Etm17x5czPY');
+            
             break;
         
         case "komut":
@@ -139,23 +120,16 @@ bot.on('message', message=>{
             break;
 
         case 'sovyet':
-            //message.channel.send( emoji('721352612271620116'));
+            const attachment = new Discord.MessageAttachment('./flag_su.png');
+            message.channel.send(attachment);
             
-            var channel = message.member.voice.channel;
-            if(!message.guild.voiceConnection) 
-                channel.join()
-                .then(function(connection) {
-                const dispatcher = connection.play(ytdl('https://youtu.be/eymPAdrGCtE', {filter: "audioonly"}))
-                dispatcher.on("finish", function(){
-                    connection.disconnect();
-                });
-                
-            })
+            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/eymPAdrGCtE');
+            
             break;
 
     }
 })
 
 
-bot.login(process.env.token);
+bot.login(process.env.token); //NzIwOTY1MjU3MTY5OTkzNzY4.XuNpWg.6Eyzi1cil6BbCnusJBHFVSu2L1I
 
