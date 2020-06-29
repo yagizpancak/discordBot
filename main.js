@@ -127,13 +127,8 @@ bot.on('message', message=>{
             
             break;
 
-        case 'oc':
+        case 'oc' || "oç":
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/YL860wvtV2c');
-            
-            break;
-
-        case 'oç':
             playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/YL860wvtV2c');
             
             break;
