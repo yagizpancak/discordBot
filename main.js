@@ -60,7 +60,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                let dispatcher = await connection.play(ytdl(link, { filter: 'audioonly' }))
+                let dispatcher = connection.play(ytdl(link, { filter: 'audioonly' }))
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
