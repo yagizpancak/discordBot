@@ -36,7 +36,7 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
                             } else {
                               var err = new Error("Value not found for " + query);
                               console.log(err);
-                              console.log(val);
+                              console.log(jsonObj);
                               cb(err);
                             }
                           } catch(e) {
