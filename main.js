@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fetch = require("node-fetch");
-const ytdl = require('ytdl-core');
+const ytdl = require('ytdl-core-discord');
 
 
 const PREFIX = '!';
@@ -60,7 +60,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play(ytdl(link, {filter: "audioonly"}))
+                const dispatcher = connection.play(ytdl(link))
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
