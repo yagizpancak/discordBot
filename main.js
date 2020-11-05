@@ -60,7 +60,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play('./videoplayback (1).mp4')
+                const dispatcher = connection.play(link)
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
@@ -124,7 +124,7 @@ bot.on('message', message=>{
             const attachment = new Discord.MessageAttachment('./flag_su.png');
             message.channel.send(attachment);
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/eymPAdrGCtE');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './sovyet.mp4');
             
             break;
 
