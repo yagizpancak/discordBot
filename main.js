@@ -60,7 +60,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                dispatcher = connection.play('/videoplayback (1).mp4')
+                const dispatcher = connection.play('/videoplayback (1).mp4')
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
