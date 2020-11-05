@@ -61,6 +61,7 @@ function playSound(channel, voiceConnection, link) {
                 channel.join()
                 .then(function(connection) {
                 const dispatcher = connection.play(ytdl(link))
+                console.log(link);
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
