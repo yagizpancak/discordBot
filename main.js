@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const fetch = require("node-fetch");
-const ytdl = require('ytdl-core-discord');
+const ytdl = require('ytdl-core');
 
 
 const PREFIX = '!';
