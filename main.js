@@ -83,7 +83,7 @@ bot.on('message', message=>{
                 message.channel.send('1 USD = '+amount+' Türk Lirası');
             });
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/EpoHRAJX6fY');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './dolar.mp4');
 
             break;
         
@@ -92,7 +92,7 @@ bot.on('message', message=>{
                 message.channel.send('1 EUR = '+amount+' Türk Lirası');
             });
 
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/90X3hdTfa28');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './euro.mp4');
             
             break;
 
@@ -106,7 +106,7 @@ bot.on('message', message=>{
 
             message.channel.send(time);
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://www.youtube.com/watch?v=Etm17x5czPY');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './saat.mp4');
             
             break;
         
@@ -130,12 +130,12 @@ bot.on('message', message=>{
 
         case 'oc':
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/YL860wvtV2c');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './oc.mp4');
             
             break;
 
         case 'oç':
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/YL860wvtV2c');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './oc.mp4');
             
             break;
     }
