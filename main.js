@@ -113,7 +113,7 @@ bot.on('message', message=>{
         case "komut":
             const embed = new Discord.MessageEmbed()
             .setTitle('Komutlar')
-            .setDescription('!dolar \n!euro \n!saat \n!sovyet')
+            .setDescription('!dolar \n!euro \n!saat \n!sovyet \n!saat 2.5')
             
             .setColor(0x33CFFB)
             message.channel.send(embed);
@@ -137,6 +137,11 @@ bot.on('message', message=>{
         case 'oç':
             playSound(message.member.voice.channel, message.guild.voiceConnection, './oc.mp4');
             
+            break;
+        
+        case 'saat 2.5':
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './saat 2.5.mp4');
+
             break;
     }
 })
