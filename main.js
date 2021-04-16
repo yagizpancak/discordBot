@@ -80,7 +80,7 @@ bot.on('message', message=>{
     switch(args[0]){
         case 'dolar':
             convertCurrency(1, 'USD', 'TRY', function(err, amount) {
-                message.channel.send('1 USD = '+amount+' Türk Lirası');
+                message.reply('1 USD = '+amount+' Türk Lirası');
             });
             
             playSound(message.member.voice.channel, message.guild.voiceConnection, './dolar.mp4');
@@ -89,7 +89,7 @@ bot.on('message', message=>{
         
         case 'euro':
             convertCurrency(1, 'EUR', 'TRY', function(err, amount) {
-                message.channel.send('1 EUR = '+amount+' Türk Lirası');
+                message.reply('1 EUR = '+amount+' Türk Lirası');
             });
 
             playSound(message.member.voice.channel, message.guild.voiceConnection, './euro.mp4');
@@ -104,7 +104,7 @@ bot.on('message', message=>{
             
             var time = hour + ":" + today.getMinutes() + ":" + today.getSeconds();
 
-            message.channel.send(time);
+            message.reply(time);
             
             playSound(message.member.voice.channel, message.guild.voiceConnection, './saat.mp4');
             
@@ -116,13 +116,13 @@ bot.on('message', message=>{
             .setDescription('!dolar \n!euro \n!saat \n!sovyet \n!saat-2.5')
             
             .setColor(0x33CFFB)
-            message.channel.send(embed);
+            message.reply(embed);
 
             break;
 
         case 'sovyet':
             const attachment = new Discord.MessageAttachment('./flag_su.png');
-            message.channel.send(attachment);
+            message.reply(attachment);
             
             playSound(message.member.voice.channel, message.guild.voiceConnection, './sovyet.mp4');
             
