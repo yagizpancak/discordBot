@@ -148,6 +148,11 @@ bot.on('message', message=>{
             playSound(message.member.voice.channel, message.guild.voiceConnection, './melih.mp4');
 
             break;
+
+        case 'simay':
+            playSound(message.member.voice.channel, message.guild.voiceConnection, './simay.mp4');
+
+            break;
     }
 })
 
