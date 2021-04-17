@@ -126,7 +126,7 @@ bot.on('message', message=>{
             var second = parseInt(today.getSeconds());
             if (second <= 9) {second = '0'+second}
             
-            var time = hour + ":" + minute + ":" + today.getSeconds();
+            var time = hour + ":" + minute + ":" + second;
 
             message.reply(time);
             
