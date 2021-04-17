@@ -6,6 +6,16 @@ const ytdl = require('ytdl-core');
 
 const PREFIX = '!';
 
+const dolar = 'https://youtu.be/EpoHRAJX6fY';
+const euro = "https://youtu.be/90X3hdTfa28";
+const saat = 'https://www.youtube.com/watch?v=PEEs7oKntr4';
+const sovyet = 'https://youtu.be/eymPAdrGCtE';
+const oc = 'https://youtu.be/YL860wvtV2c';
+const saat_2 = 'https://www.youtube.com/watch?v=1inxSk8FhtY';
+const melih = 'https://www.youtube.com/watch?v=z8qC-aZ5XcY';
+const simay = 'https://www.youtube.com/watch?v=ZfORrwPrEQ8';
+
+
 var https = require('https');
 
 function convertCurrency(amount, fromCurrency, toCurrency, cb) {
@@ -93,7 +103,7 @@ bot.on('message', message=>{
                 message.reply('1 USD = '+amount+' Türk Lirası');
             });
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/EpoHRAJX6fY');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, dolar);
 
             break;
         
@@ -102,7 +112,7 @@ bot.on('message', message=>{
                 message.reply('1 EUR = '+amount+' Türk Lirası');
             });
 
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './euro.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, euro);
             
             break;
 
@@ -116,7 +126,7 @@ bot.on('message', message=>{
 
             message.reply(time);
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './saat.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, saat);
             
             break;
         
@@ -134,33 +144,33 @@ bot.on('message', message=>{
             const attachment = new Discord.MessageAttachment('./flag_su.png');
             message.reply(attachment);
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './sovyet.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, sovyet);
             
             break;
 
         case 'oc':
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './oc.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, oc);
             
             break;
 
         case 'oç':
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './oc.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, oc);
             
             break;
         
         case 'saat-2.5':
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './saat 2.5.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, saat_2);
 
             break;
 
         case 'melih':
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './melih.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, melih);
 
             break;
 
         case 'simay':
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './simay.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, simay);
 
             break;
     }
