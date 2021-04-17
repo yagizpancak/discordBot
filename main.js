@@ -52,25 +52,30 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
 
 function playSound(channel, voiceConnection, link) {
 
-            const stream = ytdl(link,{
+            try {
+                const stream = ytdl(link,{
                 filter:"audioonly",
                 quality:"highestaudio"
-            })
+                })
 
 
-            if (!channel){
-                return;
-            }
+                if (!channel){
+                    return;
+                }
  
-            if(!voiceConnection) 
-                channel.join()
-                .then(function(connection) {
-                const dispatcher = connection.play(stream)
-                dispatcher.on("finish", function(){
+                if(!voiceConnection) 
+                    channel.join()
+                    .then(function(connection) {
+                    const dispatcher = connection.play(stream)
+                    dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
                 
-            })
+                })
+            }
+            catch(e){
+                console.log("HATA"+e)
+            }
 }
 
 bot.on('ready', () => {
