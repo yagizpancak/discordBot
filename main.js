@@ -51,16 +51,20 @@ function convertCurrency(amount, fromCurrency, toCurrency, cb) {
 }
 
 function playSound(channel, voiceConnection, link) {
-    
+
+            const stream = ytdl(link,{
+                filter:"audioonly",
+                quality:"highestaudio"
+            })
+
             if (!channel){
                 return;
             }
-
-
+ 
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play(link)
+                const dispatcher = connection.play(stream)
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
@@ -83,7 +87,7 @@ bot.on('message', message=>{
                 message.reply('1 USD = '+amount+' Türk Lirası');
             });
             
-            playSound(message.member.voice.channel, message.guild.voiceConnection, './dolar.mp4');
+            playSound(message.member.voice.channel, message.guild.voiceConnection, 'https://youtu.be/EpoHRAJX6fY');
 
             break;
         
