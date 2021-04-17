@@ -65,7 +65,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play(link)
+                const dispatcher = connection.play(stream)
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
