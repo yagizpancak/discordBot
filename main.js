@@ -57,6 +57,7 @@ function playSound(channel, voiceConnection, link) {
                 quality:"highestaudio"
             })
 
+            
             if (!channel){
                 return;
             }
