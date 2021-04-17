@@ -121,8 +121,10 @@ bot.on('message', message=>{
             var today = new Date();
             var hour = parseInt(today.getHours())+3;
             if (hour >= 24) {hour = '0'+ (hour -24)}
+
             var minute = parseInt(today.getMinutes());
             if (minute <= 9) {minute = '0'+minute}
+            
             var second = parseInt(today.getSeconds());
             if (second <= 9) {second = '0'+second}
             
