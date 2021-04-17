@@ -57,7 +57,7 @@ function playSound(channel, voiceConnection, link) {
                 quality:"highestaudio"
             })
 
-            
+
             if (!channel){
                 return;
             }
@@ -65,7 +65,7 @@ function playSound(channel, voiceConnection, link) {
             if(!voiceConnection) 
                 channel.join()
                 .then(function(connection) {
-                const dispatcher = connection.play(stream)
+                const dispatcher = connection.play(link)
                 dispatcher.on("finish", function(){
                     connection.disconnect();
                 });
