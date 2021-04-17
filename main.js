@@ -84,7 +84,7 @@ function playSound(channel, voiceConnection, link) {
                 })
             }
             catch(e){
-                console.log("HATA"+e)
+                console.log("Error: "+e)
             }
 }
 
